@@ -52,7 +52,13 @@ uv init
 
 # .claude/以下のすべてのmdファイルに対して、 {{PROJECT_NAME}} をプロジェクト名に置換
 # ex.) .claude/rules/rules.md の {{PROJECT_NAME}} を $PROJECT_ROOT に置換
-find .claude -type f -name "*.md" -exec sed -i '' "s/{{PROJECT_NAME}}/$PROJECT_ROOT/g" {} \;
+# macOS (BSD sed) と Linux (GNU sed) で -i のシグネチャが異なるため分岐
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  SED_INPLACE=(-i '')
+else
+  SED_INPLACE=(-i)
+fi
+find .claude -type f -name "*.md" -exec sed "${SED_INPLACE[@]}" "s/{{PROJECT_NAME}}/$PROJECT_ROOT/g" {} \;
 
 # memo.tmp.txt を作成
 # ../../version の中身から数字（"1.0.0"など）を読み取り、
