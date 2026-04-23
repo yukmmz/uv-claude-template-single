@@ -1,3 +1,6 @@
 !memo.tmp.txt
 .DS_Store
 test/
+
+output/*
+!output/.gitkeep

@@ -16,9 +16,9 @@ if [ -z "$PROJECT_ROOT" ]; then
 fi
 
 # TEMPLATE_DIR を再起的にコピーして、PROJECT_ROOTの名前にする
-cp -r $TEMPLATE_DIR $PROJECT_ROOT
+cp -r $TEMPLATE_DIR output/$PROJECT_ROOT
 
-cd $PROJECT_ROOT
+cd output/$PROJECT_ROOT
 
 # 3. uv プロジェクト初期化
 uv init
