@@ -1,0 +1,10 @@
+# .claudeignore
+.env
+.env.*
+!.env.example
+
+# .claude of each package
+# flapcfd_io/.claude/
+# nlinfit_flapaero/.claude/
+
+.venv/

@@ -1,0 +1,58 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Environment variables
+.env
+
+# macOS
+.DS_Store
+
+# Temporary files (commit message drafts, etc.)
+*.tmp.txt
+*.tmp.md
+
+# .claude 内の個人設定や履歴は除外
+.claude/config.json
+.claude/sessions/
+.claude/logs/
+CLAUDE.local.md
+
+# skills と agents の定義だけは git 管理に含める
+!.claude/skills/
+!.claude/agents/
+
+# データ出力（再生成可能なため除外）
+data/output/*
+!data/output/.gitkeep
+data/input/*
+!data/input/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+# data/wing_morph/*
+# !data/wing_morph/.gitkeep
+
+
+# references の重いデータ
+#references/make_morph_data/
+
+# 子リポジトリ (独立して管理するため除外)
+# flapcfd_io/
+# nlinfit_flapaero/
