@@ -55,15 +55,15 @@ uv init
 find .claude -type f -name "*.md" -exec sed -i '' "s/{{PROJECT_NAME}}/$PROJECT_ROOT/g" {} \;
 
 # memo.tmp.txt を作成
-# ../version の中身から数字（"1.0.0"など）を読み取り、
+# ../../version の中身から数字（"1.0.0"など）を読み取り、
 # それを memo.tmp.txt に "version: 1.0.0" の形式で書き込む
-VERSION=$(cat ../version)
+VERSION=$(cat ../../version)
 echo "version: $VERSION" > memo.tmp.txt
 
 
-# make initial commit
-git add .
-git commit -m "Initial commit: Project structure and uv workspace setup"
+# # make initial commit
+# git add .
+# git commit -m "Initial commit: Project structure and uv workspace setup"
 
 echo "Project initialized at: $PROJECT_ROOT"
 
