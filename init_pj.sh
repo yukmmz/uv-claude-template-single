@@ -60,11 +60,11 @@ else
 fi
 find .claude -type f -name "*.md" -exec sed "${SED_INPLACE[@]}" "s/{{PROJECT_NAME}}/$PROJECT_ROOT/g" {} \;
 
-# memo.tmp.txt を作成
+# memo.tmp.md を作成
 # ../../version の中身から数字（"1.0.0"など）を読み取り、
-# それを memo.tmp.txt に "version: 1.0.0" の形式で書き込む
+# それを memo.tmp.md に "version: 1.0.0" の形式で書き込む
 VERSION=$(cat ../../version)
-echo "version: $VERSION" > memo.tmp.txt
+echo "version: $VERSION" > memo.tmp.md
 
 
 # # make initial commit
