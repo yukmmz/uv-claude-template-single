@@ -11,4 +11,4 @@
 +@.claude/rules/git-workflow.md
 +@.claude/rules/project-structure.md
 +@.claude/rules/bash-style.md
-
++@.claude/rules/research-collab.md
