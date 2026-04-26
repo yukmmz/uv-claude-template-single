@@ -21,6 +21,7 @@ wheels/
 
 # Environment variables
 .env
+*.local.*
 
 # macOS
 .DS_Store
