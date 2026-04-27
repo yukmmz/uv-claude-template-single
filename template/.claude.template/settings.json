@@ -25,7 +25,9 @@
     "deny": [
       "Bash(rm -rf *)",
       "Bash(npm publish)",
-      "Bash(git push origin main)"
+      "Bash(git push origin main)",
+      "Bash(git add*)",
+      "Bash(git commit*)"
     ]
   },
   "hooks": {
@@ -35,6 +37,16 @@
           {
             "type": "command",
             "command": ".claude/hooks/check_uncommitted.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/check_git_permission.sh",
+            "if": "Bash(git *)"
           }
         ]
       }
