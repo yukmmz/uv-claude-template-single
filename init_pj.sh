@@ -1,9 +1,8 @@
 #!/bin/bash
 
 
-# このシェルファイルのディレクトリへ移動
-cd "$(dirname "$0")"
-
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+CALL_DIR="$PWD"
 TEMPLATE_DIR='template'
 
 # 1. 親プロジェクトディレクトリの作成と移動
@@ -15,10 +14,10 @@ if [ -z "$PROJECT_ROOT" ]; then
   exit 1
 fi
 
-# TEMPLATE_DIR を再起的にコピーして、PROJECT_ROOTの名前にする
-cp -r $TEMPLATE_DIR output/$PROJECT_ROOT
+# TEMPLATE_DIR を再起的にコピーして、呼び出し元ディレクトリに PROJECT_ROOT の名前で作成
+cp -r "$SCRIPT_DIR/$TEMPLATE_DIR" "$CALL_DIR/$PROJECT_ROOT"
 
-cd output/$PROJECT_ROOT
+cd "$CALL_DIR/$PROJECT_ROOT"
 
 # .claude.template を .claude rename
 mv .claude.template .claude
@@ -66,7 +65,7 @@ find .claude -type f -name "*.md" -exec sed "${SED_INPLACE[@]}" "s/{{PROJECT_NAM
 # memo.tmp.md を作成
 # ../../version の中身から数字（"1.0.0"など）を読み取り、
 # それを memo.tmp.md に "version: 1.0.0" の形式で書き込む
-VERSION=$(cat ../../version)
+VERSION=$(cat "$SCRIPT_DIR/version")
 echo "version: $VERSION" > memo.tmp.md
 
 

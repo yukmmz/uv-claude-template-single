@@ -16,7 +16,7 @@ def main() -> None:
         print(f"Usage: {sys.argv[0]} <project_root_directory>")
         sys.exit(1)
 
-    dest = script_dir / "output" / project_root
+    dest = Path.cwd() / project_root
     src = script_dir / TEMPLATE_DIR
 
     shutil.copytree(src, dest)
