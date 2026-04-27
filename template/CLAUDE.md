@@ -8,7 +8,5 @@
 +@.claude/rules/python-design.md
 +@.claude/rules/anti-assumption.md
 +@.claude/rules/arch-sync.md
-+@.claude/rules/git-workflow.md
-+@.claude/rules/project-structure.md
 +@.claude/rules/bash-style.md
 +@.claude/rules/research-collab.md
