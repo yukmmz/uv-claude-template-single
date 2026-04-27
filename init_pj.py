@@ -30,10 +30,14 @@ def main() -> None:
     # Replace {{PROJECT_NAME}} in all .md files under .claude/
     for md_file in claude_dir.rglob("*.md"):
         text = md_file.read_text(encoding="utf-8")
-        md_file.write_text(text.replace("{{PROJECT_NAME}}", project_root), encoding="utf-8")
+        md_file.write_text(
+            text.replace("{{PROJECT_NAME}}", project_root), encoding="utf-8"
+        )
 
     version = (script_dir / "version").read_text(encoding="utf-8").strip()
-    (dest / "memo.tmp.md").write_text(f"version: {version}\n", encoding="utf-8")
+    (dest / "memo.tmp.md").write_text(
+        f"workspace template version: {version}\n", encoding="utf-8"
+    )
 
     print(f"Project initialized at: {project_root}")
 

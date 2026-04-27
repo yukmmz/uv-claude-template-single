@@ -66,7 +66,7 @@ find .claude -type f -name "*.md" -exec sed "${SED_INPLACE[@]}" "s/{{PROJECT_NAM
 # ../../version の中身から数字（"1.0.0"など）を読み取り、
 # それを memo.tmp.md に "version: 1.0.0" の形式で書き込む
 VERSION=$(cat "$SCRIPT_DIR/version")
-echo "version: $VERSION" > memo.tmp.md
+echo "workspace template version: $VERSION" > memo.tmp.md
 
 
 # # make initial commit
