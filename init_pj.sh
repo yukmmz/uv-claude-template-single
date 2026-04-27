@@ -20,6 +20,9 @@ cp -r $TEMPLATE_DIR output/$PROJECT_ROOT
 
 cd output/$PROJECT_ROOT
 
+# .claude.template を .claude rename
+mv .claude.template .claude
+
 # 3. uv プロジェクト初期化
 uv init
 
