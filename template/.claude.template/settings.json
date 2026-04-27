@@ -29,6 +29,16 @@
     ]
   },
   "hooks": {
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/check_uncommitted.sh"
+          }
+        ]
+      }
+    ],
     "Notification": [
       {
         "hooks": [
