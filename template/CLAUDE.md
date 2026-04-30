@@ -10,3 +10,4 @@
 +@.claude/rules/arch-sync.md
 +@.claude/rules/bash-style.md
 +@.claude/rules/research-collab.md
++@.claude/rules/project-structure.md
