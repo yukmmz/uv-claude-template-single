@@ -37,6 +37,10 @@
         "hooks": [
           {
             "type": "command",
+            "command": ".claude/hooks/check_bash_style.sh"
+          },
+          {
+            "type": "command",
             "command": ".claude/hooks/check_git_permission.sh",
             "if": "Bash(git *)"
           }
